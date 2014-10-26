@@ -6,7 +6,7 @@
 int r; //initial seed
 
 /* LOCAL FUNCTIONS */
-int d (int,int);
+int d (int);
 
 
 /* MAIN */
