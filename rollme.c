@@ -1,31 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 /* LOCAL CONSTANTS */
-int r; //initial seed
+int rndseed = 0;
 
 /* LOCAL FUNCTIONS */
-int d (int);
+int rolld(int sides, int *rngSEED);
 
 
 /* MAIN */
 int main() 
 { 
     srand(time(NULL));
-    int r = rand();
-    printf("%d\n", r);    
+    rndseed = rand();
+    printf("%d\n", rndseed);    
 
-    printf("%s\n", "roll me");
-    return 0;
+    printf("%s\n", "roll a d4");
+
+    int firstroll = rolld(4, &rndseed);
+    printf("%d\n", firstroll);
+
+return 0;
 }
 
 /* FUNCTION DEFINITIONS */
 
-/* ROLL DICE
-    @todo: improve seeding */
-
-int d(int sides)
+/* ROLL A #-SIDED DIE */
+int rolld(int sides, int *rngSEED)
 {
-    return sides;
+    srand(*rngSEED);
+    int rolled = (rand() % sides);
+return rolled+1;
 }

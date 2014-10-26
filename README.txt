@@ -1,6 +1,3 @@
 IVY
 
-more details to come
-
-
-!
+A dice rolling program
