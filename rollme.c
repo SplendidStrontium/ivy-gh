@@ -7,7 +7,7 @@
 int rndseed = 0;
 
 /* LOCAL FUNCTIONS */
-int rolld(int sides, int *rngSEED);
+int rolld(int sides);
 
 
 /* MAIN */
@@ -19,7 +19,7 @@ int main()
 
     printf("%s\n", "roll a d4");
 
-    int firstroll = rolld(4, &rndseed);
+    int firstroll = rolld(4);
     printf("%d\n", firstroll);
 
 return 0;
@@ -28,9 +28,9 @@ return 0;
 /* FUNCTION DEFINITIONS */
 
 /* ROLL A #-SIDED DIE */
-int rolld(int sides, int *rngSEED)
+int rolld(int sides)
 {
-    srand(*rngSEED);
+    srand(time(NULL)); 
     int rolled = (rand() % sides);
 return rolled+1;
 }
