@@ -1,10 +1,14 @@
+#include <iostream>
+#include <sstream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+using namespace std;
 
 /* LOCAL CONSTANTS */
 int rndseed = 0;
+stringstream playerinput;
 
 /* LOCAL FUNCTIONS */
 int rolld(int sides);
@@ -21,6 +25,9 @@ int main()
 
     int firstroll = rolld(4);
     printf("%d\n", firstroll);
+
+    cout << "enter d4 or d20 to roll a die";
+    cout << "\n";
 
 return 0;
 }
