@@ -94,15 +94,9 @@ void cleaninput(char* input)
     cout << "Your name will be: " << input << "\n";
 }
 
-/* PRINT OPTIONS TO PLAYER 
-    @TODO: make this vary 
-*/
+/* PRINT OPTIONS TO PLAYER */
 void queryplayer()
 {
-    printf("%s\n", "1: d4");
-    printf("%s\n", "2: d20");
-    cin >> s;
-    cout << s << "\n";
 }
 /* PRINT PLAYER LOCATION
 */

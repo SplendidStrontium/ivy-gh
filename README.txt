@@ -1,3 +1,3 @@
 IVY
 
-A dice rolling program
+A 2nd edition AD&D character creation tool
