@@ -6,11 +6,34 @@
 #include <time.h>
 using namespace std;
 
+/* object prototypes */
+class PlayerCharacter
+{
+public:
+    PlayerCharacter();
+    int strength;
+    int dexterity;
+    int intellect;
+    int wisdom;
+    int constitution;
+    int charisma;
+};
+
+PlayerCharacter::PlayerCharacter()
+{
+    int strength = 0;
+    int dexterity = 0;
+    int intellect = 0;
+    int wisdom = 0;
+    int constitution = 0;
+    int charisma = 0;
+}
+
 /* LOCAL CONSTANTS */
 int rndseed = 0;
-char WHEREAMI[] = "CHARACTERCREATION";
-string s;
-stringstream playerinput;
+char WHEREAMI[] = "CHARACTER CREATION";
+char playerinput[30];
+char s[30];
 
 /* LOCAL FUNCTIONS */
 int rolld(int sides);
@@ -45,13 +68,13 @@ void queryplayer()
     printf("%s\n", "1: d4");
     printf("%s\n", "2: d20");
     cin >> s;
-    cout << s;
+    cout << s << "\n";
 }
 /* PRINT PLAYER LOCATION
 */
 void printplayerlocation(char* location)
 {
-    printf("%s\n", location);
+    cout << "You are now at " << location << "\n";
 }
 
 /* ROLL A #-SIDED DIE */
