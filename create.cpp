@@ -47,6 +47,11 @@ private:
     string nname;
 };
 
+/* DATA STRUCTURES */
+enum e_bool {
+	yes=0,
+	no=1
+};
 
 /* LOCAL CONSTANTS */
 int rndseed = 0;
@@ -72,6 +77,10 @@ int main()
     cleaninput(s);
     PlayerCharacter myPC(s);
 
+    cout << "Would you like to make an EXCEPTIONAL roll for one of your stats?\n";
+    cout << "16 + 1d4 : caveat : must roll (4)2x to get 20\n";
+    cout << "Y/N?:";
+    cin >> s;
     //queryplayer();
 
 return 0;
