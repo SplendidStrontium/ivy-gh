@@ -23,7 +23,7 @@ class PlayerCharacter : public Character
 public:
     PlayerCharacter(const string& str) : Character(){
 	nname = str;
-	cout << "Your name is " << nname << "\n";
+	cout << "GENERATE NEW CHARACTER? (Y/N)\n";
     }
 private:
     string nname;
@@ -37,6 +37,7 @@ char s[30];
 
 /* LOCAL FUNCTIONS */
 int rolld(int sides);
+void cleaninput(char* input);
 void printplayerlocation(char* location);
 void queryplayer();
 
@@ -50,8 +51,8 @@ int main()
 
     cout << "Let's roll up a new character. Enter a short name." << "\n";
     cin >> s;
+    cleaninput(s);
     PlayerCharacter myPC(s);
-
 
     //queryplayer();
 
@@ -59,6 +60,12 @@ return 0;
 }
 
 /* FUNCTION DEFINITIONS */
+
+/* CHECK FOR BAD CHARACTERS FROM USER INPUT */
+void cleaninput(char* input)
+{
+    cout << "Your name will be: " << input << "\n";
+}
 
 /* PRINT OPTIONS TO PLAYER 
     @TODO: make this vary 
