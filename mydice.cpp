@@ -1,0 +1,4 @@
+namespace rng_die {
+
+
+}

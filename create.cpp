@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include "mydice.h"
 using namespace std;
 namespace computress
 {  // void listenforSTATNAME
