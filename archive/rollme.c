@@ -1,7 +1,9 @@
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+//using namespace std;
 
 /* LOCAL CONSTANTS */
 int rndseed = 0;
@@ -21,6 +23,8 @@ int main()
 
     int firstroll = rolld(4);
     printf("%d\n", firstroll);
+
+    cout << "What kind of die will you roll?";
 
 return 0;
 }
