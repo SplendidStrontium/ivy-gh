@@ -5,6 +5,24 @@
 #include <string.h>
 #include <time.h>
 using namespace std;
+namespace computress
+{  // void listenforSTATNAME
+    enum e_stat {
+	Strength=91,
+	Dexterity,
+	Intellect,
+	Wisdom,
+	Constitution,
+	Comeliness,
+	Charisma };
+
+}
+namespace rng_die
+{   int rolld(int sides) {
+	srand(time(NULL)); 
+	int rolled = (rand() % sides);
+	return rolled+1; }
+}
 
 /* object prototypes */
 class Character {
@@ -41,7 +59,8 @@ class PlayerCharacter : public Character
 public:
     PlayerCharacter(const string& str) : Character(){
 	nname = str;
-	cout << "GENERATE NEW CHARACTER? (Y/N)\n";
+	cout << "Rolling for exceptional stat: roll a d4.\n";
+	//cout << "15 + " << rolld(4) << "[d4] = " << 
     }
 private:
     string nname;
@@ -59,27 +78,19 @@ char WHEREAMI[] = "CHARACTER CREATION";
 char s[30];
 
 /* LOCAL FUNCTIONS */
-int rolld(int sides);
-void cleaninput(char* input);
 void printplayerlocation(char* location);
-void queryplayer();
 
 /* MAIN */
 int main() 
 { 
     srand(time(NULL));
     rndseed = rand();
-
     printplayerlocation(WHEREAMI); 
 
-    cout << "Let's roll up a new character. Enter a short name." << "\n";
-    cin >> s;
-    cleaninput(s);
+    cout << "Dolly\'s stats:\n";
     PlayerCharacter myPC(s);
-
-    cout << "Would you like to make an EXCEPTIONAL roll for one of your stats?\n";
-    cout << "16 + 1d4 : caveat : must roll (4)2x to get 20\n";
-    cout << "Y/N?:";
+    cout << rng_die::rolld(4) << "\n";
+    cout << "Pick your stat: ";
     cin >> s;
     //queryplayer();
 
@@ -88,27 +99,9 @@ return 0;
 
 /* FUNCTION DEFINITIONS */
 
-/* CHECK FOR BAD CHARACTERS FROM USER INPUT */
-void cleaninput(char* input)
-{
-    cout << "Your name will be: " << input << "\n";
-}
-
-/* PRINT OPTIONS TO PLAYER */
-void queryplayer()
-{
-}
 /* PRINT PLAYER LOCATION
 */
 void printplayerlocation(char* location)
 {
     cout << "You are now at " << location << "\n";
-}
-
-/* ROLL A #-SIDED DIE */
-int rolld(int sides)
-{
-    srand(time(NULL)); 
-    int rolled = (rand() % sides);
-return rolled+1;
 }
