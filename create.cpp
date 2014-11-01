@@ -5,21 +5,19 @@
 #include <string.h>
 #include <time.h>
 #include "mydice.h"
+#include "myIO.h"
 using namespace std;
-namespace computress
-{  // void listenforSTATNAME
-    enum e_stat {
-	Strength=91,
-	Dexterity,
-	Intellect,
-	Wisdom,
-	Constitution,
-	Comeliness,
-	Charisma };
-
-}
 
 /* object prototypes */
+struct CUR_CON { 
+    int lastroll;
+    int isDead;
+    char* interface; 
+  
+    enum e_io {
+	io_STAT=0   };
+};
+
 class Character {
 public:
     Character() {
@@ -61,13 +59,8 @@ private:
     string nname;
 };
 
-/* DATA STRUCTURES */
-enum e_bool {
-	yes=0,
-	no=1
-};
-
 /* LOCAL CONSTANTS */
+int myroll = 0;
 int rndseed = 0;
 char WHEREAMI[] = "CHARACTER CREATION";
 char s[30];
@@ -80,19 +73,22 @@ int main()
 { 
     srand(time(NULL));
     rndseed = rand();
+    CUR_CON session;
     printplayerlocation(WHEREAMI); 
 
     cout << "Dolly\'s stats:\n";
     PlayerCharacter myPC(s);
-    cout << rng_die::rolld(4) << "\n";
+    myroll = rng_die::rolld(4);
+    cout << myroll << "\n";
     cout << "Pick your stat: ";
-    cin >> s;
+    using namespace computress;
+	int listencode = 0;
+	listen(listencode);
+     //cin >> s;
     //queryplayer();
 
 return 0;
 }
-
-/* FUNCTION DEFINITIONS */
 
 /* PRINT PLAYER LOCATION
 */
