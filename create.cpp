@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include "dist/json/json.h"
 #include "mydice.h"
 #include "myIO.h"
 using namespace std;

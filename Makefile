@@ -1,4 +1,5 @@
-all: rollme
+all: rollme 
+	cd dist; make
 
 rollme: create.o mydice.o myIO.o
 	g++ create.o mydice.o myIO.o -o rollme
