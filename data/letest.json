@@ -1,0 +1,15 @@
+{
+    "name": "Lady Enigma",
+    "isAlive":	true,
+    "stats_basic": {
+	"str": 7,
+	"dex": 10,
+	"con": 13,
+	"int": 17,
+	"wis": 15,
+	"cha": 13 
+    },
+    "race": "human",
+    "inventory": [],
+    "followers": null
+}
