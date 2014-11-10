@@ -23,30 +23,8 @@ struct CUR_CON {
 class Character {
 public:
     Character() {
-	m_str = 0;
-	m_dex = 0;
-	m_int = 0;
-	m_wis = 0;
-	m_con = 0;
-	m_com = 0;
-	m_cha = 0;
-	cout << "Your stats are\n";
-	cout << " STR " << m_str << "  |  ";
-	cout << "DEX " << m_dex << "  |  ";
-	cout << "INT " << m_int << "  |  ";
-	cout << "WIS " << m_wis << "  |  ";
-	cout << "CON " << m_con << "  |  ";
-	cout << "COM " << m_com << "  |  ";
-	cout << "CHA " << m_cha << "  |  \n";
     }
 private:
-    int m_str;
-    int m_dex;
-    int m_int;
-    int m_wis;
-    int m_con;
-    int m_com;
-    int m_cha;
 };
 
 class PlayerCharacter : public Character
@@ -77,15 +55,14 @@ int main(int argc, char **argv)
     rndseed = rand();
     CUR_CON session;
     printplayerlocation(WHEREAMI); 
-
-    cout << "Dolly\'s stats:\n";
-    PlayerCharacter myPC(s);
+    /* ROLL A DIE 
     myroll = rng_die::rolld(4);
     cout << myroll << endl;
     cout << "Pick your stat: ";
     using namespace computress;
 	int listencode = 0;
 	listen(listencode);
+    */
      //cin >> s;
     //queryplayer();
     using namespace std;
