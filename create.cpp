@@ -1,3 +1,4 @@
+#include <fstream>
 #include <iostream>
 #include <sstream>
 #include <stdio.h>
@@ -70,7 +71,7 @@ char s[30];
 void printplayerlocation(char* location);
 
 /* MAIN */
-int main() 
+int main(int argc, char **argv) 
 { 
     srand(time(NULL));
     rndseed = rand();
@@ -80,13 +81,31 @@ int main()
     cout << "Dolly\'s stats:\n";
     PlayerCharacter myPC(s);
     myroll = rng_die::rolld(4);
-    cout << myroll << "\n";
+    cout << myroll << endl;
     cout << "Pick your stat: ";
     using namespace computress;
 	int listencode = 0;
 	listen(listencode);
      //cin >> s;
     //queryplayer();
+    using namespace std;
+    ifstream fin;
+    char c;
+
+    fin.open("data/letest.json", ios::in);
+
+    if (fin.fail())
+    {
+	cout << "unable to open" << endl;
+	exit(1);
+    }
+
+    while (!fin.fail() && !fin.eof())
+    {
+	cout << c;
+	fin.get(c);
+    }
+    fin.close();
 
 return 0;
 }
